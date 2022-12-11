@@ -16,7 +16,7 @@
 
 <form th:method="POST" th:action="@{/admin/orderList/search}">
     <fieldset>
-        <legend><span style="font-size: 21px; font-weight: bold">Введите последние 4 символа</span></legend>
+        <legend><span style="font-size: 21px; font-weight: bold">Введите значение</span></legend>
         <br>
         <br>
         <label for="search">Поиск по номеру заказа: </label>
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                     <div class="rating__value">4.6</div>
-                                    <div class="rating__info">7 отзывов</div>
+                                    <div class="rating__info">0 отзывов</div>
                                 </div>
                                 <div class="product-card__footer">
                                     <div th:text="'Цена: ' + ${order.getPrice()}" class="product-card__price"></div>

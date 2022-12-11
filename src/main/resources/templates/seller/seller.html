@@ -25,7 +25,7 @@
     </a>
     <div class="product-card__body">
       <h4 class="product-card__title">
-        <a th:text="'Наименование: ' + ${product.getTitle()}" href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+        <a th:text="${product.getTitle()}" href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
       </h4>
       <div class="product-card__info info-product-card">
         <div th:text="'Вес: ' + ${product.getweight()}" class="info-product-card__size"></div>

@@ -55,7 +55,7 @@
                     </div>
                 </a>
                 <div data-da=".catalog-header__container, 479.98" class="body-header__search">
-                    <form action="#" class="search-header">
+                    <form th:method="POST" th:action="@{/product/search}" class="search-header">
                         <button type="submit" class="search-header__button _icon-search"></button>
                         <input autocomplete="off" type="search" name="search" data-error="Ошибка" placeholder="Поиск" class="search-header__input" th:value="*{value_search}" id="search">
                     </form>
@@ -381,12 +381,10 @@
         <div class="catalog">
             <div class="catalog__container">
                 <div class="catalog__body">
-                    <form  th:method="POST" th:action="@{/product/search}">
+                    <form th:method="POST" th:action="@{/product/search}">
                     <div class="catalog__filter filter-catalog">
                         <br>
-                        <label for="search">Поиск по наименованию</label>
-                        <br>
-                        <input style="border: black" type="search" name="search" th:value="*{value_search}">
+                        <input placeholder="Поиск по названию" type="search" name="search" th:value="*{value_search}">
                         <br>
                         <br>
                         <input class="filter-catalog__title" type="submit" value="Фильтр товаров">

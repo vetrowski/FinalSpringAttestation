@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -55,9 +56,9 @@ public class OrderService {
     }
 
     @Transactional
-    public Order findByLastFourCharacters(String str){
-        Optional<Order> orders = orderRepository.findByLastFourCharacters(str);
-        return orders.orElse(null);
+    public List<Order> findByLastFourCharacters(String str){
+        List<Order> orders = orderRepository.findByLastFourCharacters(str);
+        return orders;
     }
 
     public Object geAllOrders() {

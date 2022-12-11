@@ -1,0 +1,1 @@
+console.log("Проверка работы JS файлов в static")

@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>The Witcher Shop</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link href="/css/style.css" type="text/css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__top top-header">
+				<div class="top-header__container">
+					<nav class="top-header__menu menu-top-header">
+						<ul data-da=".menu__body, 991.98" class="menu-top-header__list">
+							<li class="menu-top-header__item menu-top-header__item_catalog"><a href="" class="menu-top-header__link menu-top-header__link_catalog _icon-arrow-buttom">Каталог товаров</a></li>
+							<li class="menu-top-header__item"><a href="#about_us" class="menu-top-header__link">О нас</a></li>
+							<li class="menu-top-header__item"><a href="#about_us" class="menu-top-header__link">Оплата и доставка</a></li>
+							<li class="menu-top-header__item"><a href="#about_us" class="menu-top-header__link">Новости</a></li>
+							<li class="menu-top-header__item"><a href="#contacts" class="menu-top-header__link">Контакты</a></li>
+						</ul>
+					</nav>
+					<form method="post" th:action="@{/logout}">
+						<a href="" class="top-header__user _icon-user"><input type="submit" value="Выйти из личного кабинета"></a>
+					</form>
+					<nav hidden class="menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<div class="menu__body"></div>
+					</nav>
+				</div>
+			</div>
+			<div class="header__body body-header">
+				<div class="body-header1__container">
+					<div class="logotypes">
+						<figure><a href=""><picture><source srcset="img\header\logo1.webp" type="image/webp"><img th:src="@{/img/header/logo1.png}" class="logo"></picture></a></figure>
+					</div>
+					<div class="heading">The Witcher Shop</div>
+					<div class="logotypes1">
+						<figure><a href=""><picture><source srcset="img\header\logo2.webp" type="image/webp"><img class="logo1" src="img\header\logo2.png"></picture></a></figure>
+					</div>
+				</div>
+				<div class="body-header__container">
+					<a href="" data-da=".top-header__container, 991.98, 2" class="actions-header__cart cart-header">
+						<div class="cart-header__icon _icon-cart"><span></span></div>
+						<div class="cart-header__body">
+							<div class="cart-header__summ"></div>
+							<div class="actions-product__buttons">
+								<a href="/order/create" class="cart-header__link">Оформить заказ</a>
+							</div>
+						</div>
+					</a>
+					<div data-da=".catalog-header__container, 479.98" class="body-header__search">
+						<form action="#" class="search-header">
+							<button type="submit" class="search-header__button _icon-search"></button>
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск" class="search-header__input">
+						</form>
+					</div>
+					<div class="body-header__actions actions-header">
+						<a href="" data-da=".top-header__container, 991.98, 2" class="actions-header__favorite _icon-favorite"></a>
+						<div data-da=".top-header__container, 991.98, first" class="actions-header__phones phones-header">
+							<div data-spollers class="phones-header__items">
+								<div class="phones-header__item">
+									<a href="tel:88007774967" class="phones-header__phone"><span>8-800-777-49-67</span></a>
+									<button type="button" data-spoller class="phones-header__arrow _icon-arrow-buttom"></button>
+									<ul class="phones-header__list">
+										<li><a href="tel:88007774968" class="phones-header__phone">8-800-777-49-68</a></li>
+										<li><a href="tel:88007774969" class="phones-header__phone">8-800-777-49-69</a></li>
+										<li><a href="tel:88007774970" class="phones-header__phone">8-800-777-49-70</a></li>
+									</ul>
+								</div>
+							</div>
+							<button type="button" data-popup="#callback" class="phones-header__callback">Заказать звонок</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="three-cards__container-cards">
+				<div class="cards-img">
+					<div>
+						<a class="cards-link" href="#main_catalog">
+							<picture class="picture-cards">
+								<img class="cards-image-style z-index: 3;" src="img\header\gwent1.jpg">
+								<div class="cards-text">Книги</div>
+							</picture>
+						</a>
+					</div>
+					<div>
+						<a class="cards-link" href="#main_catalog">
+							<picture class="picture-cards">
+								<img class="cards-image-style z-index: 2;" src="img\header\gaunter.jpg">
+								<div class="cards-text">Аксессуары</div>
+							</picture>
+						</a>
+					</div>
+					<div>
+						<a class="cards-link" href="#main_catalog">
+							<picture class="picture-cards">
+								<img class="cards-image-style z-index: 1;" src="img\header\gwent2.jpg">
+								<div class="cards-text">Мерч</div>
+							</picture>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__catalog catalog-header">
+				<div class="catalog-header__container">
+					<nav class="catalog-header__menu menu-catalog">
+						<button type="button" class="menu-catalog__back _icon-back">Назад</button>
+						<ul class="menu-catalog__list">
+							<li class="menu-catalog__item"><button data-parent="1" class="menu-catalog__link">Книжная лавка</button></li>
+							<li class="menu-catalog__item"><button data-parent="2" class="menu-catalog__link">Клинки и&nbsp;ножи</button></li>
+							<li class="menu-catalog__item"><button data-parent="3" class="menu-catalog__link">Фигурки и сувениры</button></li>
+							<li class="menu-catalog__item"><button data-parent="4" class="menu-catalog__link">Настольные игры</button></li>
+							<li class="menu-catalog__item"><button data-parent="5" class="menu-catalog__link">Одежда и&nbsp;обувь</button></li>
+							<li class="menu-catalog__item"><button data-parent="6" class="menu-catalog__link">Прочие товары</button></li>
+						</ul>
+						<div class="menu-catalog__sub-menu sub-menu-catalog">
+							<button type="button" class="sub-menu-catalog__back _icon-back">Назад</button>
+							<div class="sub-menu-catalog__container">
+								<div hidden data-submenu="1" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Основная серия</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Справочники</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Дополнительная литература</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Последнее желание</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Меч Предназначения</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кровь эльфов</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Час Презрения</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Крещение огнём</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Башня Ласточки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Владычица Озера</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сезон гроз</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Справочники по серии игр&nbsp;«The&nbsp;Witcher»</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Бестиарии</a></li>
+
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Дорога без возврата</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Что-то кончается,<br />что-то&nbsp;начинается</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Статьи Анджея Сапковского</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Другие авторы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Комиксы</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+								<div hidden data-submenu="2" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Категория оружия</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Производство</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Мастерская</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Заточка и полировка клинков</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Мечи</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Клинки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сабли</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Боевые ножи</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Разделочные ножи</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Slmogu</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Bsmith</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Булат Ивана Андреева</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Мастерская Ётуна</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кузница Кузнецова</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Мастерская Дмитрия Андреева</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Kaer Morhen forge</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Заготовки для клинков</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Материалы для рукоятей</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Уход за рукоятями</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Алмазная паста</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Паста ГОИ</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Бруски и точильные камни</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Заточные системы</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+								<div hidden data-submenu="3" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Коллекционные фигурки</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Медальоны и подвески</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Интерьер</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Металлические статуэтки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Уникальные фигурки от&nbsp;CD&nbsp;Projekt&nbsp;RED</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Нендроиды</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Медальоны всех<br /> ведьмачих&nbsp;школ</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Подвески</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кулоны</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Картины и постеры</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Плакаты и наклейки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Магниты</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Флаги</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+								<div hidden data-submenu="4" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Классические</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Карточные</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Стратегические</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Домино</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Шашки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Шахматы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Нарды</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Маджонг</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Русское лото</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Карточные колоды</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Гвинт</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Покер</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Уно</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Ведьмак: Старый Мир</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Hobby World Ведьмак НРИ</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сyberpunk Red</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+								<div hidden data-submenu="5" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Одежда</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Обувь</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Аксессуары</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Головные уборы</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Футболки и поло</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Толстовки и худи</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Куртки и пуховики</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Брюки и шорты</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Носки и гетры</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Нижнее белье</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Спортивные костюмы</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Ботинки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кроссовки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сандалии</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Мокасины</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кеды</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сланцы</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Часы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Шарфы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Рюкзаки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Сумки</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Балаклавы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Бейсболки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Шапки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Повязки</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+								<div hidden data-submenu="6" class="sub-menu-catalog__block">
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Кошельки</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Посуда</a>
+									</div>
+									<div class="sub-menu-catalog__category">
+										<a th:href="@{/product}" class="sub-menu-catalog__link-category">Чехлы</a>
+									</div>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кошельки-клатчи</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Картхолдеры</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Портмоне</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Копилки</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Тарелки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Кружки</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Термосы</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Фляги</a></li>
+									</ul>
+									<ul class="sub-menu-catalog__list">
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Для телефона</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Для планшета</a></li>
+										<li class="sub-menu-catalog__item"><a th:href="@{/product}" class="sub-menu-catalog__link">Для ноутбука</a></li>
+									</ul>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+									<div class="sub-menu-catalog__footer">
+										<a th:href="@{/product}" class="sub-menu-catalog__all">Смотреть все</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page page_home">
+			<section class="page__main-block main-block">
+				<div class="main-block__container">
+					<div class="main-block__body">
+						<div class="main-block__slider">
+							<div class="main-block__swiper">
+								<div class="main-block__slide slide-main-block">
+									<div class="slide-main-block__content">
+										<h2 data-swiper-parallax="-100" class="slide-main-block__title">Интернет-магазин атрибутики</h2>
+										<div data-swiper-parallax="-150" class="slide-main-block__sub-title">из вселенной «Ведьмака»</div>
+										<div data-swiper-parallax="-200" class="slide-main-block__text">
+											Добро пожаловать на официальный сайт «The Witcher Shop»! В&nbsp;нашем магазине представлен наиболее широкий выбор вещей, аксессуаров, оружия&nbsp;и других изделий вашей любимой вселенной. Мы доставляем товары по всей территории СНГ и&nbsp;сотрудничаем с официальными поставщиками из разных стран.
+										</div>
+									</div>
+									<a href="" data-swiper-parallax="-250" class="slide-main-block__button button">Подробнее</a>
+								</div>
+								<div class="main-block__slide slide-main-block">
+									<div class="slide-main-block__content">
+										<h2 data-swiper-parallax="-100" class="slide-main-block__title">От безделушек до уникальных</h2>
+										<div data-swiper-parallax="-150" class="slide-main-block__sub-title">коллекционных изделий</div>
+										<div data-swiper-parallax="-200" class="slide-main-block__text">
+											В нашем арсенале для вас припасено много крутых вещей, начиная от&nbsp;различных аксессуаров и&nbsp;заканчивая коллекционными клинками. Ассортимент постоянно обновляется. Чтобы ничего не&nbsp;пропустить, подписывайтесь на&nbsp;нашу <a class="articles" href="#mailing">новостную рассылку</a>.
+										</div>
+									</div>
+									<a href="" data-swiper-parallax="-250" class="slide-main-block__button button">Подробнее</a>
+								</div>
+								<div class="main-block__slide slide-main-block">
+									<div class="slide-main-block__content">
+										<h2 data-swiper-parallax="-100" class="slide-main-block__title">Покупай, читай, пиши, сочиняй</h2>
+										<div data-swiper-parallax="-150" class="slide-main-block__sub-title">и присоединяйся к нашему сообществу</div>
+										<div data-swiper-parallax="-200" class="slide-main-block__text">
+											У нас можно не только приобрести интересующие вас товары, но&nbsp;и&nbsp;ознакомиться с&nbsp;актуальными статьями, а&nbsp;также написать свои. Реализуйте свой творческий потенциал, присылайте ваши работы на&nbsp;<a class="articles" href="#contacts">articles@tws.ru</a>, и&nbsp;лучшие из них будут опубликованы на этом сайте.
+										</div>
+									</div>
+									<a href="" data-swiper-parallax="-250" class="slide-main-block__button button">Подробнее</a>
+								</div>
+							</div>
+							<div class="main-block__controll controll-main-block">
+								<div class="controll-main-block__dotts"></div>
+								<div class="controll-main-block__fraction fraction-controll">
+									<span class="fraction-controll__current">0</span> / <span class="fraction-controll__all">0</span>
+								</div>
+							</div>
+						</div>
+						<div class="main-block__media media-main-block">
+							<!-- <div class="media-main-block__body">
+								<div class="media-main-block__image">
+									<picture><source srcset="img/mainpage/main-block/image.webp" type="image/webp"><img src="img/mainpage/main-block/image.png" alt="Картинка"></picture>
+								</div>
+								<div class="media-main-block__tips">
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_1"><span>+</span></button>
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_2"><span>+</span></button>
+									<button type="button" data-tippy-content="Подсказка" class="media-main-block__tip media-main-block__tip_3"><span>+</span></button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+					<div class="main-block__advantages advantages-main">
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="img/mainpage/main-block/icons/01.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Гарантия 100% возврата денежных средств</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="img/mainpage/main-block/icons/02.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Доставка по России и&nbsp;странам СНГ</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="img/mainpage/main-block/icons/03.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Возможность оформления заказа без регистрации</div>
+						</div>
+						<div class="advantages-main__item">
+							<div class="advantages-main__icon">
+								<img src="img/mainpage/main-block/icons/04.svg" alt="Иконка">
+							</div>
+							<div class="advantages-main__text">Скидки постоянным покупателям</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__catalog-cards catalog-cards" id="main_catalog">
+				<div class="catalog-cards__container">
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Книжная лавка</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Основная серия</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Справочники</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Дополнительное</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image1">
+							<picture><source srcset="img/mainpage/catalog-cards/01.webp" type="image/webp"><img src="img/mainpage/catalog-cards/01.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Клинки и ножи</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Стальные мечи</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Серебряные мечи</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Разделочные ножи</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image">
+							<picture><source srcset="img/mainpage/catalog-cards/02.webp" type="image/webp"><img src="img/mainpage/catalog-cards/02.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Сувениры и украшения</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Статуэтки и фигурки</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Медальоны и подвески</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Магниты и плакаты</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image">
+							<picture><source srcset="img/mainpage/catalog-cards/03.webp" type="image/webp"><img src="img/mainpage/catalog-cards/03.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Настольные игры</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Классические</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Карточные</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Стратегические</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image">
+							<picture><source srcset="img/mainpage/catalog-cards/04.webp" type="image/webp"><img src="img/mainpage/catalog-cards/04.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Одежда и обувь</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Головные уборы</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Одежда</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Обувь</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image">
+							<picture><source srcset="img/mainpage/catalog-cards/05.webp" type="image/webp"><img src="img/mainpage/catalog-cards/05.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+					<div class="catalog-cards__item item-catalog-cards">
+						<div class="item-catalog-cards__body">
+							<h3 class="item-catalog-cards__title">
+								<a th:href="@{/product}" class="item-catalog-cards__link-title">Прочие товары</a>
+							</h3>
+							<ul class="item-catalog-cards__list">
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Кошельки</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Посуда</a></li>
+								<li class="item-catalog-cards__item"><a th:href="@{/product}" class="item-catalog-cards__link">Чехлы</a></li>
+							</ul>
+						</div>
+						<div class="item-catalog-cards__image">
+							<picture><source srcset="img/mainpage/catalog-cards/06.webp" type="image/webp"><img src="img/mainpage/catalog-cards/06.jpg" alt="Картинка"></picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__hits-products hits-products">
+				<section class="products-slider">
+					<div class="products-slider__container">
+						<div class="products-slider__header">
+							<h2 class="products-slider__title">Хиты продаж</h2>
+							<a th:href="@{/product}" class="products-slider__more">Перейти в каталог</a>
+						</div>
+						<div class="products-slider__slider">
+							<div class="products-slider__swiper">
+								<div th:each="product : ${products}" class="products-slider__slide">
+									<article class="product-card">
+										<a href="" class="product-card__image">
+											<span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+												<picture><source th:src="'/img/' + ${product.imageList[0].getFileName()}" type="image/webp"><img th:src="'/img/' + ${product.imageList[0].getFileName()}" alt="Картинка"></picture>
+											</span>
+										</a>
+										<div class="product-card__body">
+											<h4 class="product-card__title">
+												<a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" id="title" class="product-card__link-title"></a>
+											</h4>
+											<div class="product-card__info info-product-card">
+												<div th:text="${product.getweight()}" class="info-product-card__size"></div>
+												<div th:text="${product.getmaster()}" class="info-product-card__materials"></div>
+											</div>
+											<div class="product-card__rating rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.6</div>
+												<div class="rating__info">7 отзывов</div>
+											</div>
+											<div class="product-card__footer">
+												<div th:text="${product.getPrice()} + ' руб.'" class="product-card__price"></div>
+												<a href="" class="product-card__compare _icon-compare"></a>
+												<a href="" class="product-card__favorite _icon-favorite"></a>
+											</div>
+											<a th:href="@{/cart/add/{id}(id=${product.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button></a>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="products-slider__dotts dotts"></div>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="page__new-products new-products">
+				<section class="products-new">
+					<div class="products-new__inner">
+						<div class="products-new__container">
+							<div class="products-new__body">
+								<div class="products-new__section">
+									<h2 class="products-new__title">Новинки</h2>
+									<div class="products-new__text">
+										Здесь Вашему вниманию представлены новинки<br> «The Witcher Shop». Наш ассортимент постоянно обновляется, заглядывайте<br> к&nbsp;нам почаще, чтобы не&nbsp;пропустить уникальные коллекционные товары.
+									</div>
+									<a href="" class="products-new__link link-arrow _icon-arrow-buttom"><span>Больше новинок</span></a>
+								</div>
+							</div>
+							<div class="products-new__content">
+								<div class="products-new__slider">
+									<div class="products-new__swiper">
+										<div th:each="product : ${products}" class="products-new__slide">
+											<article class="product-card">
+												<a href="" class="product-card__image">
+													<span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+														<picture><source th:src="'/img/' + ${product.imageList[0].getFileName()}" type="image/webp"><img th:src="'/img/' + ${product.imageList[0].getFileName()}" alt="Картинка"></picture>
+													</span>
+												</a>
+												<div class="product-card__body">
+													<h4 class="product-card__title">
+														<a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" class="product-card__link-title"></a>
+													</h4>
+													<div class="product-card__info info-product-card">
+														<div th:text="${product.getweight()}" class="info-product-card__size"></div>
+														<div th:text="${product.getmaster()}" class="info-product-card__materials"></div>
+													</div>
+													<div class="product-card__rating rating rating_set">
+														<div class="rating__body">
+															<div class="rating__active"></div>
+															<div class="rating__items">
+																<input type="radio" class="rating__item" value="1" name="rating">
+																<input type="radio" class="rating__item" value="2" name="rating">
+																<input type="radio" class="rating__item" value="3" name="rating">
+																<input type="radio" class="rating__item" value="4" name="rating">
+																<input type="radio" class="rating__item" value="5" name="rating">
+															</div>
+														</div>
+														<div class="rating__value">4.6</div>
+														<div class="rating__info">7 отзывов</div>
+													</div>
+													<div class="product-card__footer">
+														<div th:text="${product.getPrice()} + ' руб.'" class="product-card__price"></div>
+														<a href="" class="product-card__compare _icon-compare"></a>
+														<a href="" class="product-card__favorite _icon-favorite"></a>
+													</div>
+													<a th:href="@{/cart/add/{id}(id=${product.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button></a>
+												</div>
+											</article>
+										</div>
+									</div>
+									<div class="products-new__dotts dotts"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="page__sale-products sale-products sale-products_no-bottom">
+				<section class="products-slider">
+					<div class="products-slider__container">
+						<div class="products-slider__header">
+							<h2 class="products-slider__title">Акции</h2>
+							<a th:href="@{/product}" class="products-slider__more">Все акции</a>
+						</div>
+						<div class="products-slider__slider">
+							<div class="products-slider__swiper">
+								<div th:each="product : ${products}" class="products-slider__slide">
+									<article class="product-card">
+										<a href="" class="product-card__image">
+											<span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+												<picture><source th:src="'/img/' + ${product.imageList[0].getFileName()}" type="image/webp"><img th:src="'/img/' + ${product.imageList[0].getFileName()}" alt="Картинка"></picture>
+											</span>
+										</a>
+										<div class="product-card__body">
+											<h4 class="product-card__title">
+												<a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}" class="product-card__link-title"></a>
+											</h4>
+											<div class="product-card__info info-product-card">
+												<div th:text="${product.getweight()}" class="info-product-card__size"></div>
+												<div th:text="${product.getmaster()}" class="info-product-card__materials"></div>
+											</div>
+											<div class="product-card__rating rating rating_set">
+												<div class="rating__body">
+													<div class="rating__active"></div>
+													<div class="rating__items">
+														<input type="radio" class="rating__item" value="1" name="rating">
+														<input type="radio" class="rating__item" value="2" name="rating">
+														<input type="radio" class="rating__item" value="3" name="rating">
+														<input type="radio" class="rating__item" value="4" name="rating">
+														<input type="radio" class="rating__item" value="5" name="rating">
+													</div>
+												</div>
+												<div class="rating__value">4.6</div>
+												<div class="rating__info">7 отзывов</div>
+											</div>
+											<div class="product-card__footer">
+												<div th:text="${product.getPrice()} + ' руб.'" class="product-card__price"></div>
+												<a href="" class="product-card__compare _icon-compare"></a>
+												<a href="" class="product-card__favorite _icon-favorite"></a>
+											</div>
+											<a th:href="@{/cart/add/{id}(id=${product.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button></a>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="products-slider__dotts dotts"></div>
+						</div>
+					</div>
+				</section>
+			</section>
+			<!-- <section class="page__sale-products sale-products">
+				<section class="products-slider">
+  <div class="products-slider__container">
+    <div class="products-slider__header">
+      <h2 class="products-slider__title">Акции</h2>
+      <a th:href="@{/product}" class="products-slider__more">Все акции</a>
+    </div>
+    <div class="products-slider__slider">
+      <div class="products-slider__swiper">
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_gigant.webp" type="image/webp"><img src="img/product-card/the_witcher_gigant.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Сапковский А. Ведьмак</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">АСТ</div>
+                <div class="info-product-card__materials">1344 стр.</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">151 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">2 209 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/geralt_of_rivia_silver_sword.webp" type="image/webp"><img src="img/product-card/geralt_of_rivia_silver_sword.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">1.4 кг</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">58 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/medallion_wolf_school.webp" type="image/webp"><img src="img/product-card/medallion_wolf_school.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Медальон Волка</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">31х39 мм</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">5.0</div>
+                <div class="rating__info">122 отзыва</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">7 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/gwent.webp" type="image/webp"><img src="img/product-card/gwent.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Гвинт. Карточная игра</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">2-4 игрока</div>
+                <div class="info-product-card__materials">52 карты</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.4</div>
+                <div class="rating__info">15 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">6 350 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_t_shirt.webp" type="image/webp"><img src="img/product-card/the_witcher_t_shirt.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Футболка The Witcher</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">Мужчинам</div>
+                <div class="info-product-card__materials">100% полиэстер</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.5</div>
+                <div class="rating__info">21 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/kaer_morhen_flask.webp" type="image/webp"><img src="img/product-card/kaer_morhen_flask.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Фляга Kaer Morhen</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">240 мл</div>
+                <div class="info-product-card__materials">Металл</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.3</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 490 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="products-slider__dotts dotts"></div>
+    </div>
+  </div>
+</section>
+			</section> -->
+			<!-- <section class="page__new-products new-products new-products_no-top">
+				<section class="products-new">
+  <div class="products-new__inner">
+    <div class="products-new__container">
+      <div class="products-new__body">
+        <div class="products-new__section">
+          <h2 class="products-new__title">Новинки</h2>
+          <div class="products-new__text">
+            Здесь Вашему вниманию представлены новинки<br> «The Witcher Shop». Наш ассортимент постоянно обновляется, заглядывайте<br> к&nbsp;нам почаще, чтобы не&nbsp;пропустить уникальные коллекционные товары.
+          </div>
+          <a href="" class="products-new__link link-arrow _icon-arrow-buttom"><span>Больше новинок</span></a>
+        </div>
+      </div>
+      <div class="products-new__content">
+        <div class="products-new__slider">
+          <div class="products-new__swiper">
+            <div class="products-new__slide">
+              <article class="product-card">
+                <a href="" class="product-card__image">
+                  <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                    <picture><source srcset="img/product-card/steel_sword_wolf_school.webp" type="image/webp"><img src="img/product-card/steel_sword_wolf_school.jpg" alt="Картинка"></picture>
+                  </span>
+                </a>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">
+                    <a href="" class="product-card__link-title">Стальной меч Школы&nbsp;Волка</a>
+                  </h4>
+                  <div class="product-card__info info-product-card">
+                    <div class="info-product-card__size">1.4 кг</div>
+                    <div class="info-product-card__materials">Сталь</div>
+                  </div>
+                  <div class="product-card__rating rating rating_set">
+                    <div class="rating__body">
+                      <div class="rating__active"></div>
+                      <div class="rating__items">
+                        <input type="radio" class="rating__item" value="1" name="rating">
+                        <input type="radio" class="rating__item" value="2" name="rating">
+                        <input type="radio" class="rating__item" value="3" name="rating">
+                        <input type="radio" class="rating__item" value="4" name="rating">
+                        <input type="radio" class="rating__item" value="5" name="rating">
+                      </div>
+                    </div>
+                    <div class="rating__value">3.9</div>
+                    <div class="rating__info">5 отзывов</div>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price">18 700 р.</div>
+                    <a href="" class="product-card__compare _icon-compare"></a>
+                    <a href="" class="product-card__favorite _icon-favorite"></a>
+                  </div>
+                  <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+                </div>
+              </article>
+            </div>
+            <div class="products-new__slide">
+              <article class="product-card">
+                <a href="" class="product-card__image">
+                  <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                    <picture><source srcset="img/product-card/steel_sword_wolf_school.webp" type="image/webp"><img src="img/product-card/steel_sword_wolf_school.jpg" alt="Картинка"></picture>
+                  </span>
+                </a>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">
+                    <a href="" class="product-card__link-title">Стальной меч Школы&nbsp;Волка</a>
+                  </h4>
+                  <div class="product-card__info info-product-card">
+                    <div class="info-product-card__size">1.4 кг</div>
+                    <div class="info-product-card__materials">Сталь</div>
+                  </div>
+                  <div class="product-card__rating rating rating_set">
+                    <div class="rating__body">
+                      <div class="rating__active"></div>
+                      <div class="rating__items">
+                        <input type="radio" class="rating__item" value="1" name="rating">
+                        <input type="radio" class="rating__item" value="2" name="rating">
+                        <input type="radio" class="rating__item" value="3" name="rating">
+                        <input type="radio" class="rating__item" value="4" name="rating">
+                        <input type="radio" class="rating__item" value="5" name="rating">
+                      </div>
+                    </div>
+                    <div class="rating__value">3.9</div>
+                    <div class="rating__info">5 отзывов</div>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price">18 700 р.</div>
+                    <a href="" class="product-card__compare _icon-compare"></a>
+                    <a href="" class="product-card__favorite _icon-favorite"></a>
+                  </div>
+                  <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+                </div>
+              </article>
+            </div>
+            <div class="products-new__slide">
+              <article class="product-card">
+                <a href="" class="product-card__image">
+                  <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                    <picture><source srcset="img/product-card/steel_sword_wolf_school.webp" type="image/webp"><img src="img/product-card/steel_sword_wolf_school.jpg" alt="Картинка"></picture>
+                  </span>
+                </a>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">
+                    <a href="" class="product-card__link-title">Стальной меч Школы&nbsp;Волка</a>
+                  </h4>
+                  <div class="product-card__info info-product-card">
+                    <div class="info-product-card__size">1.4 кг</div>
+                    <div class="info-product-card__materials">Сталь</div>
+                  </div>
+                  <div class="product-card__rating rating rating_set">
+                    <div class="rating__body">
+                      <div class="rating__active"></div>
+                      <div class="rating__items">
+                        <input type="radio" class="rating__item" value="1" name="rating">
+                        <input type="radio" class="rating__item" value="2" name="rating">
+                        <input type="radio" class="rating__item" value="3" name="rating">
+                        <input type="radio" class="rating__item" value="4" name="rating">
+                        <input type="radio" class="rating__item" value="5" name="rating">
+                      </div>
+                    </div>
+                    <div class="rating__value">3.9</div>
+                    <div class="rating__info">5 отзывов</div>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price">18 700 р.</div>
+                    <a href="" class="product-card__compare _icon-compare"></a>
+                    <a href="" class="product-card__favorite _icon-favorite"></a>
+                  </div>
+                  <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+                </div>
+              </article>
+            </div>
+            <div class="products-new__slide">
+              <article class="product-card">
+                <a href="" class="product-card__image">
+                  <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                    <picture><source srcset="img/product-card/steel_sword_wolf_school.webp" type="image/webp"><img src="img/product-card/steel_sword_wolf_school.jpg" alt="Картинка"></picture>
+                  </span>
+                </a>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">
+                    <a href="" class="product-card__link-title">Стальной меч Школы&nbsp;Волка</a>
+                  </h4>
+                  <div class="product-card__info info-product-card">
+                    <div class="info-product-card__size">1.4 кг</div>
+                    <div class="info-product-card__materials">Сталь</div>
+                  </div>
+                  <div class="product-card__rating rating rating_set">
+                    <div class="rating__body">
+                      <div class="rating__active"></div>
+                      <div class="rating__items">
+                        <input type="radio" class="rating__item" value="1" name="rating">
+                        <input type="radio" class="rating__item" value="2" name="rating">
+                        <input type="radio" class="rating__item" value="3" name="rating">
+                        <input type="radio" class="rating__item" value="4" name="rating">
+                        <input type="radio" class="rating__item" value="5" name="rating">
+                      </div>
+                    </div>
+                    <div class="rating__value">3.9</div>
+                    <div class="rating__info">5 отзывов</div>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price">18 700 р.</div>
+                    <a href="" class="product-card__compare _icon-compare"></a>
+                    <a href="" class="product-card__favorite _icon-favorite"></a>
+                  </div>
+                  <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+                </div>
+              </article>
+            </div>
+            <div class="products-new__slide">
+              <article class="product-card">
+                <a href="" class="product-card__image">
+                  <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                    <picture><source srcset="img/product-card/steel_sword_wolf_school.webp" type="image/webp"><img src="img/product-card/steel_sword_wolf_school.jpg" alt="Картинка"></picture>
+                  </span>
+                </a>
+                <div class="product-card__body">
+                  <h4 class="product-card__title">
+                    <a href="" class="product-card__link-title">Стальной меч Школы&nbsp;Волка</a>
+                  </h4>
+                  <div class="product-card__info info-product-card">
+                    <div class="info-product-card__size">1.4 кг</div>
+                    <div class="info-product-card__materials">Сталь</div>
+                  </div>
+                  <div class="product-card__rating rating rating_set">
+                    <div class="rating__body">
+                      <div class="rating__active"></div>
+                      <div class="rating__items">
+                        <input type="radio" class="rating__item" value="1" name="rating">
+                        <input type="radio" class="rating__item" value="2" name="rating">
+                        <input type="radio" class="rating__item" value="3" name="rating">
+                        <input type="radio" class="rating__item" value="4" name="rating">
+                        <input type="radio" class="rating__item" value="5" name="rating">
+                      </div>
+                    </div>
+                    <div class="rating__value">3.9</div>
+                    <div class="rating__info">5 отзывов</div>
+                  </div>
+                  <div class="product-card__footer">
+                    <div class="product-card__price">18 700 р.</div>
+                    <a href="" class="product-card__compare _icon-compare"></a>
+                    <a href="" class="product-card__favorite _icon-favorite"></a>
+                  </div>
+                  <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="products-new__dotts dotts"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+			</section> -->
+			<!-- <section class="page__sale-products sale-products sale-products_no-bottom">
+				<section class="products-slider">
+  <div class="products-slider__container">
+    <div class="products-slider__header">
+      <h2 class="products-slider__title">Акции</h2>
+      <a th:href="@{/product}" class="products-slider__more">Все акции</a>
+    </div>
+    <div class="products-slider__slider">
+      <div class="products-slider__swiper">
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_gigant.webp" type="image/webp"><img src="img/product-card/the_witcher_gigant.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Сапковский А. Ведьмак</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">АСТ</div>
+                <div class="info-product-card__materials">1344 стр.</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">151 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">2 209 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/geralt_of_rivia_silver_sword.webp" type="image/webp"><img src="img/product-card/geralt_of_rivia_silver_sword.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">1.4 кг</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">58 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/medallion_wolf_school.webp" type="image/webp"><img src="img/product-card/medallion_wolf_school.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Медальон Волка</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">31х39 мм</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">5.0</div>
+                <div class="rating__info">122 отзыва</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">7 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/gwent.webp" type="image/webp"><img src="img/product-card/gwent.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Гвинт. Карточная игра</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">2-4 игрока</div>
+                <div class="info-product-card__materials">52 карты</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.4</div>
+                <div class="rating__info">15 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">6 350 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_t_shirt.webp" type="image/webp"><img src="img/product-card/the_witcher_t_shirt.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Футболка The Witcher</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">Мужчинам</div>
+                <div class="info-product-card__materials">100% полиэстер</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.5</div>
+                <div class="rating__info">21 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/kaer_morhen_flask.webp" type="image/webp"><img src="img/product-card/kaer_morhen_flask.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Фляга Kaer Morhen</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">240 мл</div>
+                <div class="info-product-card__materials">Металл</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.3</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 490 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="products-slider__dotts dotts"></div>
+    </div>
+  </div>
+</section>
+			</section> -->
+			<!-- <section class="page__sale-products sale-products">
+				<section class="products-slider">
+  <div class="products-slider__container">
+    <div class="products-slider__header">
+      <h2 class="products-slider__title">Акции</h2>
+      <a th:href="@{/product}" class="products-slider__more">Все акции</a>
+    </div>
+    <div class="products-slider__slider">
+      <div class="products-slider__swiper">
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_gigant.webp" type="image/webp"><img src="img/product-card/the_witcher_gigant.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Сапковский А. Ведьмак</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">АСТ</div>
+                <div class="info-product-card__materials">1344 стр.</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">151 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">2 209 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/geralt_of_rivia_silver_sword.webp" type="image/webp"><img src="img/product-card/geralt_of_rivia_silver_sword.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">1.4 кг</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">58 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/medallion_wolf_school.webp" type="image/webp"><img src="img/product-card/medallion_wolf_school.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Медальон Волка</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">31х39 мм</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">5.0</div>
+                <div class="rating__info">122 отзыва</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">7 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/gwent.webp" type="image/webp"><img src="img/product-card/gwent.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Гвинт. Карточная игра</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">2-4 игрока</div>
+                <div class="info-product-card__materials">52 карты</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.4</div>
+                <div class="rating__info">15 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">6 350 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_t_shirt.webp" type="image/webp"><img src="img/product-card/the_witcher_t_shirt.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Футболка The Witcher</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">Мужчинам</div>
+                <div class="info-product-card__materials">100% полиэстер</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.5</div>
+                <div class="rating__info">21 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/kaer_morhen_flask.webp" type="image/webp"><img src="img/product-card/kaer_morhen_flask.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Фляга Kaer Morhen</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">240 мл</div>
+                <div class="info-product-card__materials">Металл</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.3</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 490 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="products-slider__dotts dotts"></div>
+    </div>
+  </div>
+</section>
+			</section> -->
+			<section class="page__articles-module articles-module">
+				<div class="articles-module__container">
+					<h2 class="articles-module__title">Наши статьи</h2>
+					<div class="articles-module__items">
+						<article class="articles-module__item item-article">
+							<a href="" class="item-article__image-ibg">
+								<picture><source srcset="img/articles-module/01.webp" type="image/webp"><img src="img/articles-module/01.jpg" alt="Картинка"></picture>
+							</a>
+							<div class="item-article__body">
+								<h4 class="item-article__title">
+									<a href="" class="item-article__link-title">Как заточить клинок?</a>
+								</h4>
+								<div class="item-article__date">24.07.2022</div>
+							</div>
+						</article>
+						<article class="articles-module__item item-article">
+							<a href="" class="item-article__image-ibg">
+								<picture><source srcset="img/articles-module/gold.webp" type="image/webp"><img src="img/articles-module/gold.jpg" alt="Картинка"></picture>
+							</a>
+							<div class="item-article__body">
+								<h4 class="item-article__title">
+									<a href="" class="item-article__link-title">Нет золота в Серых Горах</a>
+								</h4>
+								<div class="item-article__date">18.03.2020</div>
+							</div>
+						</article>
+						<article class="articles-module__item item-article">
+							<a href="" class="item-article__image-ibg">
+								<picture><source srcset="img/articles-module/card.webp" type="image/webp"><img src="img/articles-module/card.jpeg" alt="Картинка"></picture>
+							</a>
+							<div class="item-article__body">
+								<h4 class="item-article__title">
+									<a href="" class="item-article__link-title">Вокруг света за 80 дней</a>
+								</h4>
+								<div class="item-article__date">01.02.2021</div>
+							</div>
+						</article>
+						<article class="articles-module__item item-article">
+							<a href="" class="item-article__image-ibg">
+								<picture><source srcset="img/articles-module/breaking_bad.webp" type="image/webp"><img src="img/articles-module/breaking_bad.jpg" alt="Картинка"></picture>
+							</a>
+							<div class="item-article__body">
+								<h4 class="item-article__title">
+									<a href="" class="item-article__link-title">«Во все тяжкие»</a>
+								</h4>
+								<div class="item-article__date">27.09.2022</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<!-- <section class="page__lamp-products lamp-products">
+				<section class="products-slider">
+  <div class="products-slider__container">
+    <div class="products-slider__header">
+      <h2 class="products-slider__title">Фонари</h2>
+      <a th:href="@{/product}" class="products-slider__more">Перейти в каталог</a>
+    </div>
+    <div class="products-slider__slider">
+      <div class="products-slider__swiper">
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_gigant.webp" type="image/webp"><img src="img/product-card/the_witcher_gigant.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Сапковский А. Ведьмак</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">АСТ</div>
+                <div class="info-product-card__materials">1344 стр.</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">151 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">2 209 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/geralt_of_rivia_silver_sword.webp" type="image/webp"><img src="img/product-card/geralt_of_rivia_silver_sword.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">1.4 кг</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.6</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">58 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/medallion_wolf_school.webp" type="image/webp"><img src="img/product-card/medallion_wolf_school.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Медальон Волка</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">31х39 мм</div>
+                <div class="info-product-card__materials">Серебро</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">5.0</div>
+                <div class="rating__info">122 отзыва</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">7 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/gwent.webp" type="image/webp"><img src="img/product-card/gwent.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Гвинт. Карточная игра</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">2-4 игрока</div>
+                <div class="info-product-card__materials">52 карты</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.4</div>
+                <div class="rating__info">15 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">6 350 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/the_witcher_t_shirt.webp" type="image/webp"><img src="img/product-card/the_witcher_t_shirt.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Футболка The Witcher</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">Мужчинам</div>
+                <div class="info-product-card__materials">100% полиэстер</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.5</div>
+                <div class="rating__info">21 отзыв</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 500 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="products-slider__slide">
+          <article class="product-card">
+            <a href="" class="product-card__image">
+              <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+                <picture><source srcset="img/product-card/kaer_morhen_flask.webp" type="image/webp"><img src="img/product-card/kaer_morhen_flask.jpg" alt="Картинка"></picture>
+              </span>
+            </a>
+            <div class="product-card__body">
+              <h4 class="product-card__title">
+                <a href="" class="product-card__link-title">Фляга Kaer Morhen</a>
+              </h4>
+              <div class="product-card__info info-product-card">
+                <div class="info-product-card__size">240 мл</div>
+                <div class="info-product-card__materials">Металл</div>
+              </div>
+              <div class="product-card__rating rating rating_set">
+                <div class="rating__body">
+                  <div class="rating__active"></div>
+                  <div class="rating__items">
+                    <input type="radio" class="rating__item" value="1" name="rating">
+                    <input type="radio" class="rating__item" value="2" name="rating">
+                    <input type="radio" class="rating__item" value="3" name="rating">
+                    <input type="radio" class="rating__item" value="4" name="rating">
+                    <input type="radio" class="rating__item" value="5" name="rating">
+                  </div>
+                </div>
+                <div class="rating__value">4.3</div>
+                <div class="rating__info">7 отзывов</div>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price">1 490 р.</div>
+                <a href="" class="product-card__compare _icon-compare"></a>
+                <a href="" class="product-card__favorite _icon-favorite"></a>
+              </div>
+              <button type="button" class="product-card__cart button"><span class="_icon-cart">В корзину</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="products-slider__dotts dotts"></div>
+    </div>
+  </div>
+</section>
+			</section> -->
+		</main>
+		<footer class="footer">
+			<section class="footer__text text-footer">
+				<div class="text-footer__container">
+					<h1 class="text-footer__title" id="about_us">«The Witcher Shop» – интернет-магазин по вселенной Ведьмака</h1>
+					<div class="text-footer__text">Наш интернет-магазин предлагает Вам все многообразие аксессуаров, атрибутики, оружия и прочих вещей, посвященных серии «The Witcher». Здесь вы можете подобрать подарок для любимого человека или приобрести что-нибудь для себя. Фанаты книжной серии найдут у&nbsp;нас всю необходимую литературу. Любители холодного оружия смогут обзавестись сертифицированными клинками кузнечных мастеров со всех уголков планеты. Если Вы прирожденный собиратель, мы предлагаем Вашему вниманию уникальные фигурки и другие коллекционные изделия серии «Ведьмак». Также у&nbsp;нас можно купить тематические настольные игры, чтобы развлечься и весело провести время в&nbsp;компании. Если требуется обновить гардероб или создать неповторимый внешний вид, подберите для себя несколько элементов одежды с&nbsp;принтом любимых персонажей. Сотрудники службы поддержки «The Witcher Shop» остаются на связи и всегда рады Вам помочь. При возникновении любых вопросов Вы можете адресовать их в&nbsp;<a class="articles" href="#messages">мессенджерах</a> или по&nbsp;электронной почте: <a class="articles" href="#contacts">info@tws.ru</a> </div>
+				</div>
+			</section>
+			<div class="footer__container">
+				<div class="footer__body body-footer">
+					<div class="body-footer__row">
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Информация</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">О нас</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Местоположение</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Условия оплаты и доставки</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Политика конфиденциальности</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Служба поддержки</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Контактная информация</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Возврат товара</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Карта сайта</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Дополнительно</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Подарочные сертификаты</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Партнеры</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Товары со скидкой</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Личный кабинет</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Личный кабинет</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">История заказов</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Мои закладки</a>
+												</li>
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Рассылка новостей</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="body-footer__row">
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Контакты</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="tel:88007774967" class="menu-footer__link _icon-footer-phone">8 (800) 777-10-77</a>
+												</li>
+												<li class="menu-footer__item _icon-footer-clock">
+													<div>
+														<p>Пн-Пт</p>
+														<p>7:00 - 17:00 (МСК)</p>
+													</div>
+												</li>
+												<li class="menu-footer__item _icon-footer-location">
+													<div>
+														<p>Воронеж,</p>
+														<p>ул. Пролетарская,</p>
+														<p>д. 87 В, офис «7»</p>
+													</div>
+												</li>
+												<li class="menu-footer__item">
+													<div>
+														<p><a href="mailto:info@tws.ru" class="menu-footer__link _icon-footer-email" id="contacts">info@tws.ru</a></p>
+														<p><a name="contacts" href="mailto:info@tws.ru" class="menu-footer__link">articles@tws.ru</a></p>
+													</div>
+												</li>
+											</ul>
+										</nav>
+										<ul class="social-footer" id="messages">
+											<li class="social-footer__item">
+												<a href="" class="social-footer__link">
+													<picture><source srcset="img/icons/social/facebook.webp" type="image/webp"><img src="img/icons/social/facebook.png" alt=""></picture>
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="" class="social-footer__link">
+													<picture><source srcset="img/icons/social/viber.webp" type="image/webp"><img src="img/icons/social/viber.png" alt=""></picture>
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="" class="social-footer__link">
+													<picture><source srcset="img/icons/social/telegram.webp" type="image/webp"><img src="img/icons/social/telegram.png" alt=""></picture>
+												</a>
+											</li>
+											<li class="social-footer__item">
+												<a href="" class="social-footer__link">
+													<picture><source srcset="img/icons/social/whatsapp.webp" type="image/webp"><img src="img/icons/social/whatsapp.png" alt=""></picture>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Полезные ссылки</button>
+									<div class="spoller-item-footer__body">
+										<nav class="menu-footer">
+											<ul class="menu-footer__list">
+												<li class="menu-footer__item">
+													<a href="" class="menu-footer__link">Способы оплаты и доставки</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Наша гарантия</button>
+									<div class="spoller-item-footer__body">
+										<div class="spoller-item-footer__text">
+											Недовольны своей покупкой? Вы можете вернуть ее в течение 30 дней с даты получения, согласно <a href="">нашим правилам</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="body-footer__item item-footer">
+							<div data-spollers="767.98" class="item-footer__spollers spoller-item-footer">
+								<div class="spoller-item-footer__item">
+									<button type="button" data-spoller class="spoller-item-footer__title">Новостная рассылка</button>
+									<form action="#" class="spoller-item-footer__body footer-subscribe">
+										<a name="mailing"><label for="subscribe-input" class="footer-subscribe__label">Подпишитесь прямо сейчас!</label></a>
+										<div class="footer-subscribe__line">
+											<input id="subscribe-input" autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-required="email" placeholder="" class="footer-subscribe__input">
+											<button type="submit" class="footer-subscribe__button _icon-arrow-buttom"></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="body-footer__bottom">
+						<div class="body-footer__copy">
+							© 2022 «TheWitcherShop». Все права защищены. <span>www.thewitchershop.ru </span>
+						</div>
+						<div class="body-footer__rules">
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="callback" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+					Тут будет форма
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/js/app.js}"></script>
+</body>
+
+</html>

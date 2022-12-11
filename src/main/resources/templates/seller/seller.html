@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Кабинет продавца</title>
+  <link href="/css/style.css" type="text/css" rel="stylesheet">
+  <link href="/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link href="/img/favicon.ico" type="text/img" rel="stylesheet">
+</head>
+<body>
+<h3>Личный кабинет продавца</h3>
+<form th:method="POST" th:action="@{/logout}">
+  <input type="submit" value="Выйти из личного кабинета">
+</form>
+<a href="/admin/product/add">Добавить товар</a>
+<br>
+<br>
+<h3 style="color: #259376; text-align: center; font-size: 42px; font-weight: bold">Каталог товаров</h3>
+<div th:each="product : ${products}">
+  <article class="product-card">
+    <a href="" class="product-card__image">
+        <span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+            <picture><source th:src="'/img/' + ${product.imageList[0].getFileName()}" type="image/webp"><img th:src="'/img/' + ${product.imageList[0].getFileName()}" alt="Картинка"></picture>
+        </span>
+    </a>
+    <div class="product-card__body">
+      <h4 class="product-card__title">
+        <a th:text="'Наименование: ' + ${product.getTitle()}" href="" class="product-card__link-title">Серебряный меч Геральта&nbsp;из&nbsp;Ривии</a>
+      </h4>
+      <div class="product-card__info info-product-card">
+        <div th:text="'Вес: ' + ${product.getweight()}" class="info-product-card__size"></div>
+        <div th:text="'Материал: ' + ${product.getmaster()}" class="info-product-card__materials"></div>
+      </div>
+      <div class="product-card__rating rating rating_set">
+        <div class="rating__body">
+          <div class="rating__active"></div>
+          <div class="rating__items">
+            <input type="radio" class="rating__item" value="1" name="rating">
+            <input type="radio" class="rating__item" value="2" name="rating">
+            <input type="radio" class="rating__item" value="3" name="rating">
+            <input type="radio" class="rating__item" value="4" name="rating">
+            <input type="radio" class="rating__item" value="5" name="rating">
+          </div>
+        </div>
+        <div class="rating__value">4.6</div>
+        <div class="rating__info">7 отзывов</div>
+      </div>
+      <div class="product-card__footer">
+        <div th:text="'Цена: ' + ${product.getPrice()}" class="product-card__price">р.</div>
+        <a href="" class="product-card__compare _icon-compare"></a>
+        <a href="" class="product-card__favorite _icon-favorite"></a>
+      </div>
+      <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Редактировать товар</span></button></a>
+      <br>
+      <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Удалить товар</span></button></a>
+    </div>
+  </article>
+</div>
+</body>
+</html>

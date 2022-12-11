@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Смена пароля</title>
+  <link href="/css/registration.css" type="text/css" rel="stylesheet">
+  <link href="/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link href="/img/favicon.ico" type="text/img" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <img th:src="@{/img/logo.jpg}" alt="Логотип">
+  <form method="POST" th:action="@{/authentication/change}" th:object="${person}">
+    <div>
+      <input type="text" th:field="*{login}" placeholder="Введите ваш логин" name="login" id="login">
+    </div>
+    <div style="color: red" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></div>
+    <div>
+      <input type="password" th:field="*{password}" placeholder="Введите новый пароль" name="password" id="password">
+    </div>
+    <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    <input class="dws-submit" type="submit" value="Сменить пароль">
+    <br>
+    <a href="/authentication/registration">Создать аккаунт</a>
+    <br>
+    <a href="/authentication/login">Вернуться на страницу авторизации</a>
+  </form>
+</div>
+</body>
+</html>

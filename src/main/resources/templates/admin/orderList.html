@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список заказов</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h3 style="font-weight: bold; font-size: 44px; color: #259376; text-align: center">Меню по работе с заказами</h3>
+
+<form th:method="POST" th:action="@{/admin/orderList/search}">
+    <fieldset>
+        <legend><span style="font-size: 21px; font-weight: bold">Введите параметры поиска</span></legend>
+        <br>
+        <br>
+        <label for="search">Поиск по номеру заказа: </label>
+        <br>
+        <input type="search" name="search" th:value="*{value_search}" id="search">
+        <br>
+        <br>
+        <input type="submit" value="Найти">
+    </fieldset>
+</form>
+<br>
+<br>
+<a href="/admin">Вернуться в главное меню администратора</a>
+<div th:each="order : ${orders}">
+</div>
+<hr>
+<main class="page page_inner">
+    <div class="catalog">
+        <div class="catalog__container">
+            <div class="catalog__body">
+                <form>
+                </form>
+                <div class="catalog__content">
+                    <div class="catalog__products">
+                        <article th:each="order : ${orders}" class="product-card">
+                            <h3 th:text="'Заказ №: ' + ${order.getNumber()}"></h3>
+                            <br>
+                            <h3 th:text="'Логин пользователя: ' + ${order.getPerson().getLogin()}"></h3>
+                            <a class="product-card__image">
+										<span class="product-card__item-image-ibg product-card__item-image-ibg-contain">
+											<picture><source th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" type="image/webp"><img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" alt="Картинка"></picture>
+										</span>
+                            </a>
+                            <div class="product-card__body">
+                                <h4 class="product-card__title">
+                                    <a th:text="${order.getProduct().getTitle()}"></a>
+                                </h4>
+                                <div class="product-card__info info-product-card">
+                                    <div th:text="'Кол-во: ' + ${order.getCount()}" class="info-product-card__size"></div>
+                                    <div th:text="${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}" class="info-product-card__materials"></div>
+                                </div>
+                                <div class="product-card__rating rating rating_set">
+                                    <div class="rating__body">
+                                        <div class="rating__active"></div>
+                                        <div class="rating__items">
+                                            <input type="radio" class="rating__item" value="1" name="rating">
+                                            <input type="radio" class="rating__item" value="2" name="rating">
+                                            <input type="radio" class="rating__item" value="3" name="rating">
+                                            <input type="radio" class="rating__item" value="4" name="rating">
+                                            <input type="radio" class="rating__item" value="5" name="rating">
+                                        </div>
+                                    </div>
+                                    <div class="rating__value">4.6</div>
+                                    <div class="rating__info">7 отзывов</div>
+                                </div>
+                                <div class="product-card__footer">
+                                    <div th:text="'Цена: ' + ${order.getPrice()}" class="product-card__price"></div>
+                                    <a href="product.html" class="product-card__compare _icon-compare"></a>
+                                    <a href="product.html" class="product-card__favorite _icon-favorite"></a>
+                                </div>
+                                <p style="font-weight: bold" th:text="'Статус: ' + ${order.getStatus()}"></p>
+                                <br>
+                                <a th:href="@{/admin/product/orderList/editStatus1/{id}(id=${order.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Оформлен</span></button></a>
+                                <br>
+                                <a th:href="@{/admin/product/orderList/editStatus2/{id}(id=${order.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Принят</span></button></a>
+                                <br>
+                                <a th:href="@{/admin/product/orderList/editStatus3/{id}(id=${order.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Получен</span></button></a>
+                                <br>
+                                <a th:href="@{/admin/product/orderList/editStatus4/{id}(id=${order.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Отменен</span></button></a>
+                                <br>
+                                <a th:href="@{/admin/product/orderList/deleteOrder/{id}(id=${order.getId()})}"><button type="button" class="product-card__cart button"><span class="_icon-cart">Удалить</span></button></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

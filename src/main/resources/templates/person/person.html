@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Список зарегистрированных пользователей магазина</title>
+  <link href="/css/table.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<h3 style="font-weight: bold; font-size: 36px; color: #259376; text-align: center">Список зарегистрированных пользователей<br><span style="font-weight: bold; font-size: 28px; color: #259376; text-align: center">(при клике на ID вы попадете в меню редактирования)</span></h3>
+<div class="swot-table">
+  <table>
+    <thead>
+    <tr class="main-table">
+      <th style="color: black">Id</th>
+      <th>Логин</th>
+      <th>Пароль</th>
+      <th>Роль</th>
+    </tr>
+    </thead>
+    <tbody>
+    <form th:each="element : ${person}" th:method="POST" th:action="@{/admin/person/info/{id}(id=${element.getId()})}">
+      <tr class="str">
+        <td style="color: deepskyblue; font-size: 24px"><a th:href="@{/admin/person/edit/{id}(id=${element.getId()})}" th:text="${element.getId()}"></a></td>
+        <td th:text="${element.getLogin()}"></td>
+        <td th:text="${element.getPassword()}"></td>
+        <td th:text="${element.getRole()}"></td>
+      </tr>
+    </form>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<div style="margin: 0 auto"><h6 style="font-weight: bold; font-size: 22px; color: #259376; text-align: center"><a style="text-align: center" href="/admin/person/sorting_and_searching_and_filters">Поиск, сортировка, фильтрация</a>
+  <br>
+  <br>
+  <a href="/admin">Вернуться в главное меню администратора</a></h6>
+</div>
+
+</body>
+</html>

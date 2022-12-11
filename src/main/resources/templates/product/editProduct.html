@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Редактирование товара</title>
+  <link href="/css/style.css" type="text/css" rel="stylesheet">
+  <link href="/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link href="/img/favicon.ico" type="text/img" rel="stylesheet">
+</head>
+<body>
+<h3 style="color: green; text-align: center; font-size: 36px; font-weight: bold">Меню редактирования товара</h3>
+<form th:method="POST" th:action="@{/admin/product/edit/{id}(id=${editProduct.getId()})}" th:object="${editProduct}">
+  <article class="product-card">
+    <br>
+    <br>
+    <br>
+
+    <label for="description">Введите описание: </label>
+    <textarea th:field="*{description}" placeholder="Описание" id="description"></textarea>
+    <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+    <br>
+    <label for="category">Выберите категорию товара: </label>
+    <select name="category" th:field="*{category}" id="category">
+      <div th:each="element : ${category}">
+        <option th:text="${element.getName()}" th:value="${element.getId()}"></option>
+      </div>
+    </select>
+
+    <br>
+    <br>
+    <br>
+
+    <a href="" class="product-card__image">
+      <p style="color: red">Вы можете добавить до 5 фотографий. Первая фотография не может быть пустой</p>
+      <input type="file" name="file_one">
+      <input type="file" name="file_two">
+      <input type="file" name="file_three">
+      <input type="file" name="file_four">
+      <input type="file" name="file_five">
+    </a>
+    <div class="product-card__body">
+      <h4 class="product-card__title">
+        <label for="title">Введите наименование: </label>
+        <input type="text" th:field="*{title}" placeholder="Наименование" id="title">
+        <div style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+      </h4>
+      <div class="product-card__info info-product-card">
+        <div class="info-product-card__size">
+          <label for="weight">Введите вес: </label>
+          <textarea th:field="*{weight}" placeholder="Вес" id="weight"></textarea>
+        </div>
+        <div style="color: red" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></div>
+        <div class="info-product-card__materials">
+          <label for="master">Введите материал: </label>
+          <input type="text" th:field="*{master}" placeholder="Материал" id="master">
+        </div>
+        <div style="color: red" th:if="${#fields.hasErrors('master')}" th:errors="*{master}"></div>
+      </div>
+      <div class="product-card__rating rating rating_set">
+        <div class="rating__body">
+          <div class="rating__active"></div>
+          <div class="rating__items">
+            <input type="radio" class="rating__item" value="1" name="rating">
+            <input type="radio" class="rating__item" value="2" name="rating">
+            <input type="radio" class="rating__item" value="3" name="rating">
+            <input type="radio" class="rating__item" value="4" name="rating">
+            <input type="radio" class="rating__item" value="5" name="rating">
+          </div>
+        </div>
+        <div class="rating__value">4.6</div>
+        <div class="rating__info">7 отзывов</div>
+      </div>
+      <div class="product-card__footer">
+        <div class="product-card__price">
+          <label for="price">Введите цену: </label>
+          <input type="number" th:field="*{price}" min="1" step="0.00" placeholder="Цена" id="price">
+        </div>
+        <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+        <a href="" class="product-card__compare _icon-compare"></a>
+        <a href="" class="product-card__favorite _icon-favorite"></a>
+      </div>
+      <button class="product-card__cart button"><input type="submit" value="Редактировать товар"></button>
+    </div>
+  </article>
+</form>
+</body>
+</html>

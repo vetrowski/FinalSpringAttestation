@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск и фильтрация пользователей</title>
+    <link href="/css/table.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h3 style="font-weight: bold; font-size: 36px; color: #259376; text-align: center">Сортировка, поиск и фильтрация пользователей<br><span style="font-weight: bold; font-size: 28px; color: #259376; text-align: center">(результаты поиска будут выведены в таблице, в меню редактирования можно перейти при клике на ID)</span></h3>
+<form method="post" th:action="@{/admin/person/sorting_and_searching_and_filters}">
+    <label for="SortingAndSearchingAndFiltersOptions">Выберите параметр поиска:  </label>
+    <select name="SortingAndSearchingAndFiltersOptions" id="SortingAndSearchingAndFiltersOptions">
+        <option value="login">По Логину</option>
+        <option value="role">По Роли</option>
+    </select>
+    <br>
+    <br>
+    <label for="value">Введите значение: </label>
+    <input type="text" name="value" id="value">
+    <br>
+    <br>
+    <button type="submit">Поиск или фильтрация</button>
+</form>
+<h3>Результат поиска:</h3>
+<br>
+<div class="swot-table">
+    <table>
+        <thead>
+        <tr class="main-table">
+            <th style="color: black">Id</th>
+            <th>Логин</th>
+            <th>Пароль</th>
+            <th>Роль</th>
+        </tr>
+        </thead>
+        <tbody>
+        <form th:each="person : ${person}">
+            <tr class="str">
+                <td style="color: deepskyblue; font-size: 24px"><a th:href="@{/admin/person/edit/{id}(id=${person.getId()})}" th:text="${person.getId()}"></a></td>
+                <td th:text="${person.getLogin()}"></td>
+                <td th:text="${person.getPassword()}"></td>
+                <td th:text="${person.getRole()}"></td>
+            </tr>
+        </form>
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<a href="/admin/person">Вернуться к просмотру всего списка пользователей</a>
+<br>
+<br>
+<a href="/admin">Вернуться в главное меню администратора</a>
+</body>
+</html>
